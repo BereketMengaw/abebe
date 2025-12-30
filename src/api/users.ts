@@ -1,5 +1,7 @@
 export async function fetchUsers() {
-  const response = fetch('/api/users')
-  return response.json() // ERROR: response.json is not a function
+  const response = await fetch('/api/users')
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`)
+  }
+  return response.json()
 }
-

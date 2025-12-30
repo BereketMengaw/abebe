@@ -4,9 +4,9 @@ export function Modal({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
   const modalRef = useRef<any>(null)
   
   const handleClose = () => {
-    modalRef.current.close() // ERROR: Cannot read property 'close' of null
+    modalRef.current?.close()
+    onClose()
   }
   
   return isOpen ? <div ref={modalRef}>Modal Content</div> : null
 }
-

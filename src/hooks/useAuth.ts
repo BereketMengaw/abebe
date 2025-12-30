@@ -1,9 +1,10 @@
 import { useState } from 'react'
 
 export function useAuth() {
+  const [user, setUser] = useState<any>(null)
+  
   return {
-    user: user, // ERROR: user is not defined
+    user: user,
     isAuthenticated: !!user
   }
 }
-

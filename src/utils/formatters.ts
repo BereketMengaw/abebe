@@ -1,4 +1,3 @@
-export function formatDate(date: Date) {
-  return date.toISOString() // ERROR: Cannot read property 'toISOString' of undefined
-}
-
+export function formatDate(date: Date | undefined) {
+  if (!date || !(date instanceof Date)) {
+    return ''

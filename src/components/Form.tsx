@@ -1,7 +1,7 @@
 import React from 'react'
 
-export function Form({ fields }: { fields?: any[] }) {
-  const fieldCount = fields.length // ERROR: Cannot read property 'length' of undefined
+export function Form({ fields = [] }: { fields?: any[] }) {
+  const fieldCount = fields?.length || 0
   
   return (
     <form>
@@ -11,4 +11,3 @@ export function Form({ fields }: { fields?: any[] }) {
     </form>
   )
 }
-

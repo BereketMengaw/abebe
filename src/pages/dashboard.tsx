@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 export function Dashboard() {
-  const data = undefined
-  const items = data.map((item: any) => item.id) // ERROR: Cannot read property 'map' of undefined
+  const [data, setData] = useState<any[]>([])
+  
+  useEffect(() => {
+    setData([])
+  }, [])
+  
+  const items = data.map((item: any) => item.id)
   
   return (
     <div>
@@ -11,4 +16,3 @@ export function Dashboard() {
     </div>
   )
 }
-

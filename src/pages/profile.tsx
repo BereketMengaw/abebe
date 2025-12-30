@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 export function Profile() {
-  const user = null
+  const [user, setUser] = useState<any>(null)
+  
+  useEffect(() => {
+    setUser(null)
+  }, [])
+  
+  if (!user) {
+    return <div>Loading...</div>
+  }
+  
   return (
     <div>
-      <h1>{user.name}</h1> {/* ERROR: Cannot read property 'name' of null */}
+      <h1>{user.name}</h1>
       <p>{user.email}</p>
     </div>
   )
 }
-

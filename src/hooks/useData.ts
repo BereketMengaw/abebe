@@ -7,7 +7,6 @@ export function useData(url: string) {
     fetch(url).then(res => res.json()).then(setData)
   }, [url])
   
-  // BUG: data is undefined initially
   return data.data // ERROR: Cannot read property 'data' of undefined
 }
 

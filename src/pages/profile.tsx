@@ -1,7 +1,6 @@
 import React from 'react'
 
 export function Profile() {
-  // BUG: user is null
   const user = null
   return (
     <div>
